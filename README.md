@@ -8,7 +8,7 @@ A Python library for interacting with the Trivia API. This library allows you to
 
 You can install this library using pip:
 ```bash
-pip install the-trivia-api-library
+pip install the_trivia_api_library
 ```
 
 ## Example usage
