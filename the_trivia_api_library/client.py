@@ -1,6 +1,5 @@
 import requests
 from .categories import TriviaCategory
-from .order import TriviaOrder
 from .difficulties import TriviaDifficulty
 from .tags import TriviaTags
 from .region import TriviaRegion
@@ -18,9 +17,23 @@ class TriviaAPIClient:
 
 
     def get_all_tags(self):
+        """
+        Get all tags.
+        :param: None
+        :return: list of tags
+        """
         return self._make_api_request('GET', 'tags')
 
     def get_totals_per_tag(self, categories=None, difficulties=None, tags=None, region=None, types=None):
+        """
+        Get totals per tag.
+        :param categories: list of categories
+        :param difficulties: list of difficulties
+        :param tags: list of tags
+        :param region: list of regions
+        :param types: list of types
+        :return: list of totals per tag
+        """
         params = {
             'categories': TriviaCategory(categories).to_query_string(),
             'difficulties': TriviaDifficulty(difficulties).to_query_string(),
@@ -32,6 +45,18 @@ class TriviaAPIClient:
         return self._make_api_request('GET', 'totals-per-tag', params)
 
     def get_random_question(self, limit=None, categories=None, difficulties=None, region=None, tags=None, types=None, session=None, preview=None):
+        """
+        Get a random set of questions.
+        :param limit: number of questions
+        :param categories: list of categories
+        :param difficulties: list of difficulties
+        :param region: list of regions
+        :param tags: list of tags
+        :param types: list of types
+        :param session: session token
+        :param preview: preview
+        :return: list of questions
+        """
         params = {
             'limit': limit or None,
             'categories': TriviaCategory(categories).to_query_string(),

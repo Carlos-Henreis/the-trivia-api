@@ -15,18 +15,18 @@ pip install the_trivia_api_library
 Here's an example of how to use this library to interact with the Trivia API:
 
 ```Python
-from the_trivia_api import TriviaAPIClient, TriviaCategory, TriviaOrder, TriviaDifficulty, TriviaTags
+from the_trivia_api_library import TriviaAPIClient, EnumCategory, EnumDifficulty
 
 # Initialize the Trivia API client
 api_key = "YOUR_API_KEY"
-client = TheTriviaAPIClient(api_key)
+client = TriviaAPIClient(api_key=api_key)
 
 # Get a random set of questions
-questions = client.get_random_questions(
+questions = client.get_random_question(
     limit=5,
-    categories=[TriviaCategory.GENERAL_KNOWLEDGE],
-    difficulties=[TriviaDifficulty.EASY],
-    tags=[TriviaTags.SCIENCE]
+    categories=[EnumCategory.SCIENCE.value],
+    difficulties=[EnumDifficulty.EASY.value],
+    tags=["math", "physics"]
 )
 
 for question in questions:
@@ -35,6 +35,100 @@ for question in questions:
     print(f"Incorrect Answers: {', '.join(question['incorrectAnswers'])}")
     print()
 ```
+
+## Methods
+
+### get_random_question
+Get a random set of questions from the Trivia API.
+
+#### Parameters
+- `limit` - The number of questions to return. Defaults to 1.
+- `categories` - A list of categories to filter the questions by. Defaults to None.
+- `difficulties` - A list of difficulties to filter the questions by. Defaults to None.
+- `region` - A list of regions to filter the questions by. Defaults to None.
+- `tags` - A list of tags to filter the questions by. Defaults to None.
+- `types` - A list of types to filter the questions by. Defaults to None.
+- `session` - A session object to use for the request. Defaults to None.
+- `preview` - A boolean indicating whether to return the questions in preview mode. Defaults to False.
+
+#### Returns
+A list of questions.
+
+#### Example
+```Python
+from the_trivia_api_library import TriviaAPIClient, EnumCategory, EnumDifficulty
+
+# Initialize the Trivia API client
+api_key = "YOUR_API_KEY"
+client = TriviaAPIClient(api_key=api_key)
+
+# Get a random set of questions
+questions = client.get_random_question(
+    limit=5,
+    categories=[EnumCategory.SCIENCE.value],
+    difficulties=[EnumDifficulty.EASY.value],
+    tags=["math", "physics"]
+)
+
+for question in questions:
+    print(f"Question: {question['question']['text']}")
+    print(f"Correct Answer: {question['correctAnswer']}")
+    print(f"Incorrect Answers: {', '.join(question['incorrectAnswers'])}")
+    print()
+```
+
+### get_categories
+Get a list of categories from the Trivia API.
+
+#### Parameters
+- None
+
+#### Returns
+A list of categories.
+
+#### Example
+```Python
+from the_trivia_api_library import TriviaAPIClient
+
+api_key = "YOUR_API_KEY"
+client = TriviaAPIClient(api_key=api_key)
+
+tags = client.get_all_tags()
+
+for tag in tags:
+    print(tag)
+```
+
+
+### get_totals_per_tag
+Get the total number of questions per tag from the Trivia API.
+
+#### Parameters
+- `categories` - A list of categories to filter the questions by. Defaults to None.
+- `difficulties` - A list of difficulties to filter the questions by. Defaults to None.
+- `region` - A list of regions to filter the questions by. Defaults to None.
+- `tags` - A list of tags to filter the questions by. Defaults to None.
+- `types` - A list of types to filter the questions by. Defaults to None.
+
+#### Returns
+A list of totals per tag.
+
+#### Example
+```Python
+from the_trivia_api_library import TriviaAPIClient
+
+api_key = "YOUR_API_KEY"
+client = TriviaAPIClient(api_key=api_key)
+
+tags = client.get_totals_per_tag()
+
+for tag in tags:
+    print(f"tag: {tag} -> total: {tags[tag]}")
+
+```
+
+# Initialize the Trivia API client
+
 
 ## Contributing
 
