@@ -10,6 +10,7 @@ setup(
     version='0.0.2',
     description='A Python library for The Trivia API',
     long_description=README,
+    long_description_content_type="text/markdown",
     author='Carlos Henrique Reis',
     author_email='cahenre@gmail.com',
     url='https://github.com/Carlos-Henreis/the-trivia-api',
