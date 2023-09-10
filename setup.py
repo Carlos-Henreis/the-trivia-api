@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='the_trivia_api_library',
-    version='0.0.2',
+    version='0.0.4',
     description='A Python library for The Trivia API',
     long_description=README,
     long_description_content_type="text/markdown",
