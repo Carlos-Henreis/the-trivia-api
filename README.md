@@ -4,6 +4,13 @@
 
 A Python library for interacting with the Trivia API. This library allows you to easily request multiple-choice trivia questions and access various features of the Trivia API.
 
+## Demo
+
+Access a demo of this library [here](https://demo-the-trivia-api-python.vercel.app).
+
+![example demo](https://raw.githubusercontent.com/Carlos-Henreis/the-trivia-api/master/docs/example-demo.png)
+
+
 ## Installation
 
 You can install this library using pip:
