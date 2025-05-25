@@ -1,12 +1,16 @@
 # The Trivia API Python Library
+[![PyPI version](https://img.shields.io/pypi/v/the-trivia-api-library.svg)](https://pypi.org/project/the-trivia-api-library/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/the-trivia-api-library.svg)](https://pypi.org/project/the-trivia-api-library/)
+![Python Versions](https://img.shields.io/pypi/pyversions/the-trivia-api-library)
+![License](https://img.shields.io/pypi/l/the-trivia-api-library)
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+---
 
 A Python library for interacting with the Trivia API. This library allows you to easily request multiple-choice trivia questions and access various features of the Trivia API.
 
 ## Demo
 
-Access a demo of this library [here](https://demo-the-trivia-api-python.vercel.app).
+Access a demo of this library [here](https://demo-the-trivia-api-python.cahenre.com.br).
 
 ![example demo](https://raw.githubusercontent.com/Carlos-Henreis/the-trivia-api/master/docs/example-demo.png)
 
@@ -25,7 +29,7 @@ Here's an example of how to use this library to interact with the Trivia API:
 from the_trivia_api_library import TriviaAPIClient, EnumCategory, EnumDifficulty
 
 # Initialize the Trivia API client
-api_key = "YOUR_API_KEY"
+api_key = "YOUR_API_KEY" # it's not necessary
 client = TriviaAPIClient(api_key=api_key)
 
 # Get a random set of questions
@@ -124,7 +128,7 @@ A list of totals per tag.
 ```Python
 from the_trivia_api_library import TriviaAPIClient
 
-api_key = "YOUR_API_KEY"
+api_key = "YOUR_API_KEY" #it's not necessary
 client = TriviaAPIClient(api_key=api_key)
 
 tags = client.get_totals_per_tag()
